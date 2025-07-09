@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<br lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>L'égalité des chances dans le Pacifique</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>L'égalité des chances dans le Pacifique</h1>
+    <span class="start">
+        <h2>Les inégalités dans la représentation politique, l’éducation et l’emploi des jeunes restent des défis majeurs pour les sociétés du Pacifique, comme le montrent les données de ces six pays.</h2>
+        <p style="text-align: justify;">
+            Les États insulaires du Pacifique, tels que Fidji, la Nouvelle-Calédonie, la Papouasie-Nouvelle-Guinée, Kiribati et Tonga, sont confrontés à des défis significatifs liés à l'égalité des chances. Ces nations partagent des problématiques communes en matière de développement, notamment la représentation des femmes dans les parlements nationaux, l'achèvement du cycle secondaire, ainsi que l'insertion des jeunes dans les systèmes éducatifs et professionnels. Ces questions sont essentielles pour promouvoir un avenir plus équitable et inclusif dans la région.
+        </p><br/>
+        <div style="text-align: center;">
+            <span style="display: inline-block;">
+                <img src="img/egalite_des_chances.png" width="600px" alt="Description" style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
+            </span>
+        </div>
+    </span> 
+    
+    <h2>Les femmes en postes managérials</h2>
+    <div id="chart1" class="chart-container"></div>
+    <div id="charts">
+        <div id="chart2" class="chart-container"></div>
+        <div id="chart3" class="chart-container"></div>
+        <div id="chart4" class="chart-container"></div>
+    </div>
+    
+    
+    
+    
+    <section id="chartsContainer" aria-live="polite"> 
+        <nav id="countryMenu" aria-label="Sélection des pays et onglets">
+            <button data-tab="compare" id="compareTab" class="active">Comparaison</button>
+            <button data-tab="country" data-country="Fidji">Fidji</button>
+            <button data-tab="country" data-country="Nouvelle-Calédonie">Nouvelle-Calédonie</button>
+            <button data-tab="country" data-country="Papouasie-Nouvelle-Guinée">Papouasie-Nouvelle-Guinée</button>
+            <button data-tab="country" data-country="Kiribati">Kiribati</button>
+            <button data-tab="country" data-country="Tonga">Tonga</button>
+        </nav>
+    </span>
+    
+    <section id="chartsContainer" aria-live="polite">  
+        <div id="chartsCompare" class="chart-section" style="display: flex; flex-direction: column;">
+            <div id="compareWomenMenParliament" class="chart-box" role="region" aria-label="Comparaison femmes et hommes en parlement par pays"></div>
+            <p class="para">Dans les pays du Pacifique, la proportion de sièges occupés par des femmes dans les parlements nationaux reste faible, reflétant des disparités structurelles et culturelles persistantes. Malgré des progrès dans certains États, les femmes continuent de faire face à des obstacles multiples, comme les normes patriarcales et le manque d’opportunités pour accéder à des postes décisionnels. Renforcer leur présence politique est crucial pour garantir une gouvernance plus inclusive.</p>
+            
+            <div id="compareSecondaryCompletion" class="chart-box" role="region" aria-label="Comparaison taux d’achèvement secondaire par pays"></div>
+            <p class="para">Le taux d'achèvement du deuxième cycle du secondaire reste inégal, notamment en raison des défis géographiques et économiques rencontrés par ces nations insulaires. De nombreux élèves abandonnent leurs études en raison de la pauvreté, du manque d'infrastructures scolaires ou de l'éloignement des établissements. Investir dans l’éducation secondaire et promouvoir des initiatives d'inclusion scolaire peut contribuer à réduire ces écarts et à renforcer le capital humain.</p>
+            
+            <div id="compareYouthNEET" class="chart-box" role="region" aria-label="Comparaison jeunes non scolarisés et sans emploi ni formation par pays"></div>
+            <p class="para">La proportion de jeunes non scolarisés et sans emploi ni formation demeure préoccupante dans ces pays. Ce phénomène, souvent lié à des systèmes éducatifs insuffisants et des économies limitées, fragilise l’avenir de la jeunesse. Des politiques ciblées, telles que la création de programmes de formation professionnelle et d'emplois adaptés, sont essentielles pour réduire ces inégalités et offrir des perspectives aux nouvelles générations.</p>
+            
+            <div id="compareRadar" class="chart-box" role="region" aria-label="Comparaison radar des indicateurs par pays"></div>
+        </div>
+    </section>
+    
+    <div id="chartsCountry" class="chart-section" style="display: none; flex-direction: column;">
+        <div id="chartWomenMenParliament" class="chart-box" role="region" aria-label="Femmes et hommes dans les parlements nationaux"></div>
+        <div id="chartSecondaryCompletion" class="chart-box" role="region" aria-label="Taux d’achèvement du deuxième cycle du secondaire"></div>
+        <div id="chartYouthNEET" class="chart-box" role="region" aria-label="Proportion de jeunes non scolarisés et sans emploi ni formation"></div>
+        <div id="chartPieParliament" class="chart-box" role="region" aria-label="Camembert répartition hommes femmes parlement"></div>
+        <div id="chartRadar" class="chart-box" role="region" aria-label="Comparaison des indicateurs par pays"></div>
+    </div>
+</section>
+
+<div style="text-align: center; margin: 2em;">
+    <video width="800" controls>
+        <source src="video/DataVizMotionDesign-v4.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la lecture de vidéos.
+    </video>
+    <p style="font-size: 0.9em;">L’égalité des chances dans le Pacifique</p>
+</div>
+
+<span class="start">
+    <h2 style="text-align: center;">Matériel et méthode</h2>
+    <p>Ce projet est construit avec ApexCharts. Le style est géré à l'aide de CSS. Les données proviennent de la base de données
+        <a href="https://stats.pacificdata.org/vis?tm=2050&pg=0&snb=9&df[ds]=ds%3ASPC2&df[id]=DF_BP50_2&df[ag]=SPC&df[vs]=1.0&dq=A.CR_3%2BSL_TLF_NEET%2BSG_GEN_PARL%2BIC_GEN_MGTL.KI%2BTO%2BPG%2BNC%2BFJ........&pd=2014%2C2024&to[TIME_PERIOD]=false&ly[cl]=TIME_PERIOD&ly[rs]=INDICATOR%2CSEX%2CAGE%2COCCUPATION%2CURBANIZATION%2CEDUCATION&ly[rw]=GEO_PICT"> Pacific Data Hub</a>.
+        Il s'agit d'un projet réalisé dans le cadre du Pacific Data Challenge 2025 par IEKAWE Walei et CHEN Magalie.
+    </p>
+</span>
+
+<script src="dist/apexcharts.min.js"></script>
+<script src="donnees.js"></script>
+<script src="graph.js"></script>
+<script src="reduces.js"></script>
+<script src="filtres.js"></script>
+<script src="pie.js"></script>
+<script src="compare.js"></script>
+    
+<footer style="text-align: center;"> © 2025 Pacific Dataviz</footer><br/>
+</body>
+</html

@@ -1,0 +1,233 @@
+:root {
+    --color-bg: #79a7d3;               
+    --color-primary: #8a307f;          
+    --color-primary-light: #b57abf;    
+    --color-text: #2f1b3a;              
+    --color-text-light: #6b5b7a;     
+    --color-border: #ac88bf;        
+    --color-accent: #e8edf5;            
+    --color-menu-bg: #6a246f;          
+    --box-shadow: 0 4px 12px rgba(172, 136, 191, 0.2); 
+    --radar-colors: 
+    #ac88bf,                                                 
+    #b57abf,                       
+    #a5c4e7,                       
+    #9b6ea0,                        
+    #e8edf5;                       
+}
+body {
+    color: var(--color-text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+    box-sizing: border-box; /* Inclut les bordures et paddings dans la largeur */
+}
+
+h1, header {
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    user-select: none;
+    position: sticky;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+nav#countryMenu {
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    flex-wrap: wrap;
+    user-select: none;
+}
+
+
+nav#countryMenu button {
+    background: transparent;
+    border: 2px solid transparent;
+    color: var(--color-primary-light);
+    cursor: pointer;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;
+    font-weight: 700;
+    box-shadow: none;
+}
+
+nav#countryMenu button.active,
+nav#countryMenu button:hover {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    box-shadow: 0 0 12px var(--color-primary-light);
+    transform: scale(1.05);
+}
+
+#chartsContainer {
+    max-width: 1200px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    transition: opacity 0.4s ease;
+    align-items: center;
+}
+
+.chart-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    width: 100%; /* 100% pour occuper tout l'espace */
+    align-items: center;
+}
+
+.chart-box {
+    background: var(--color-accent);
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 2vh;
+    width: calc(100vw - 40vw);
+    max-width: 1200px;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    box-sizing: border-box;
+    
+}
+
+.chart-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(172, 136, 191, 0.4);
+}
+
+.chart-title {
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--color-text);
+    text-align: center;
+    user-select: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.chart-title.radar-title {
+    font-size: 1.8rem;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+}
+
+@media (max-width: 1024px) {
+    .chart-section {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .chart-section {
+        width: 98%;
+    }
+    nav#countryMenu {
+        font-size: 1rem;
+    }
+    nav#countryMenu button {
+        padding: 0.4rem 0.7rem;
+    }
+    .chart-title.radar-title {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+.start {
+    margin-bottom: 5vh;
+    margin-right: 20vw;
+    margin-left: 20vw;
+    text-align: justify;
+}
+
+.pie {
+    left: 0;
+}
+
+#pie,
+#annee{
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#mois {
+    width: 60%;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 2vh;
+}
+
+.pie {
+    width: 100%;
+    text-align: center;
+}
+
+.apexcharts-radar-series text {
+    white-space: pre-line;
+}
+
+.para{
+    margin-right: 20vh;
+    margin-left: 20vh;
+    text-align: justify;
+}
+
+/* Wrapper around all charts */
+#charts {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* space between charts */
+  padding: 0 18vw;
+  box-sizing: border-box;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Each individual chart container */
+.chart-container {
+  width: 100%;
+  min-width: 0; /* prevents horizontal overflow */
+}
+
+/* Improve title and labels visibility */
+.apexcharts-title-text {
+  white-space: normal !important;
+  overflow-wrap: break-word;
+  text-align: center;
+  font-size: 16px;
+}
+
+.apexcharts-legend-text,
+.apexcharts-xaxis-label,
+.apexcharts-data-label {
+  white-space: normal !important;
+  overflow-wrap: break-word;
+  font-size: 13px;
+}
+
+#chart1 {
+  width: 400px;     /* ou la largeur de ton graphique */
+  margin: 0 auto;   /* centre horizontalement */
+}
